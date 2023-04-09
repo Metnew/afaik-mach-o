@@ -4,6 +4,10 @@ How OS X Executes Applications - http://0xfe.blogspot.com/2006/03/how-os-x-execu
 
 Q&A: How OS X Executes Applications http://0xfe.blogspot.com/2006/03/qa-how-os-x-executes-applications.html
 
+#### https://www.codeproject.com/Articles/187181/Dynamic-Linking-of-Imported-Functions-in-Mach-O
+
+Mach-O + FAT basics + dynamic linking (advanced?)
+
 ##### https://cocoaintheshell.whine.fr/2009/07/universal-binary-mach-o-format/
 
 > But how did they manage to do this ? Well, it’s very simple, an UB application is nothing more than an archive of 2 applications with a special header.
@@ -206,3 +210,8 @@ When you call the execve routine, the kernel first loads the specified program f
 
 The dynamic linker loads all the shared libraries that the main program links against (the dependent libraries) and binds enough of the symbols to start the program. It then calls the entry point function. At build time, the static linker adds the standard entry point function to the main executable file from the object file /usr/lib/crt1.o. This function sets up the runtime environment state for the kernel and calls static initializers for C++ objects, initializes the Objective-C runtime, and then calls the program’s main function.
 
+
+### Great tutorial
+https://www.objc.io/issues/6-build-tools/mach-o-executables/
+
+slide in the folder from https://papers.put.as/papers/ios/2012/Mathieu-RENARD-GreHACK-Practical-iOS-App-Hacking.pdf
